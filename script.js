@@ -165,7 +165,7 @@ else {
     console.log('sodo cha khamo karon cha khaita taka laga na ')
 }
 
-// if (danishPrice<myBudget){
+// if (danishPrice<myBudget)7{
 //     if (packedWell==true){
 //         console.log('fresh danish, lets eat now')
 //     }
@@ -300,5 +300,62 @@ var phone = {
     ram: '8GB',
     price: 19000,
     buyDate: 2021,
-
 }
+// akhane phone hocca object and phone ar information ==>> ( phone name , storage, ram , price, buydata) <== golo proparty  
+
+console.log(phone);//phone ar  sob information golo publishid korar jonno  object na main name lekha hoy 
+console.log(phone.phoneName);//phone ar information  alada alada show korar jonno 
+phone.price = 20000;//phone at price update kora hoise
+console.log(phone);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////while and for loop break and continue////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//while loop 
+var i = 0;
+while (i < 10) {
+    console.log(i);
+    if (i == 6) {
+        break
+    }
+    i++;
+}
+
+//for loop
+for (var i = 0; i < 20; i++) {
+    console.log(i);
+    if (i == 9) {
+        break
+    }
+}
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Check whether a year is a Leap Year or not>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+function isLeapYear(year) {
+    if (year % 4 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+const myYear = 2087;
+const isMyYearLeapYear = isLeapYear(myYear);
+console.log('is my year leap year', isMyYearLeapYear);
+
+
+const yourYear = 20220;
+const isYourYearLeapYear = isLeapYear(yourYear);
+console.log('is your year leap ', isYourYearLeapYear);
+
+//==========================================Calculate Factorial of a number using for loop==========================================
+
+//7! ==> 7 x 6 x 5 x 4 x 3 x 2 x 1 ===5040
+var Factorial = 1;
+for (var i = 1; i <= 7; i++) {
+    Factorial = Factorial * i;
+}
+console.log(Factorial);
