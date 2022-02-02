@@ -359,3 +359,43 @@ for (var i = 1; i <= 7; i++) {
     Factorial = Factorial * i;
 }
 console.log(Factorial);
+
+//=========================================== problem fixt================================================
+
+const myNumber = 5;
+const output = Math.abs(myNumber);
+console.log(output);
+
+
+// number ba price ar   oporar mann nawar jonno (math.ceil) use kora hoise 
+const roolNumber = 21.998885;
+const rooloutput = Math.ceil(roolNumber);
+console.log(rooloutput);
+
+// number ba price ar   nechar mann nawar jonno (math.floor) use kora hoise 
+const ruriprice = 21.998885;
+const rutioutput = Math.floor(ruriprice);
+console.log(rutioutput);
+
+
+//===========================================Create a Fibonacci Series using a for loop================================================
+
+const fibo = [0, 1];
+for (let i = 2; i <= 10; i++) {
+    fibo[i] = fibo[i - 1] + fibo[i - 2];
+
+}
+console.log(fibo);
+
+
+//function
+
+function fiboUse(num) {
+    const fibo = [0, 1];
+    for (let i = 2; i <= num; i++) {
+        fibo[i] = fibo[i - 1] + fibo[i - 2];
+    }
+    return fibo;
+}
+const fiboSeries = fiboUse(15);
+console.log(fiboSeries);
