@@ -399,3 +399,67 @@ function fiboUse(num) {
 }
 const fiboSeries = fiboUse(15);
 console.log(fiboSeries);
+
+
+//===============================================22-2 Remove duplicate items from an array==========================================
+
+const names = ['abul', 'babul', 'kabul', 'dabul', 'ebul', 'fabul', 'babul', 'abul', 'babul', 'abul', 'babul', 'kabul', 'dabul', 'ebul', 'fabul'];
+function removeDuplicate(names) {
+    const unique = [];
+    // for (let i = 0; i < name.length; i++) {
+    //     const element = names[i];
+    // console.log(element); }
+
+    for (const element of names) {
+        console.log(element);
+        if (unique.indexOf(element) == -1) {
+            unique.push(element);
+        }
+    }
+    return unique;
+}
+const uniqueNames = removeDuplicate(names);
+console.log(uniqueNames);
+
+
+//>>>>>>>>>>>>>>>>=====-------22-5 Use add and multiplication to calculate wood requirements------=====<<<<<<<<<<<<<<<<<<<<<<
+
+function woodCulator(cairQuantity, tableQuantity, bedQuantity) {
+    const perChairWood = 3;
+    const perTableWood = 10;
+    const perBedWood = 50;
+    //wood calculation
+    const chairWoodQuantity = cairQuantity * perChairWood;
+    const tableWoodQuantity = tableQuantity * perTableWood;
+    const bedWoodQuantity = bedQuantity * perBedWood;
+    // adding all wood Quantity
+    const totalWood = chairWoodQuantity + tableWoodQuantity + bedWoodQuantity;
+    return totalWood;
+}
+const firstOption = woodCulator(1, 1, 1);
+console.log(firstOption);
+
+
+
+//>>>>>>>>>>>>>>>>=====-------22-7 Find the cheapest phone from an array of phone objects------=====<<<<<<<<<<<<<<<<<<<<<<
+
+const phones = [
+    { name: 'samsung', price: 20000, camera: 10, storage: 64 },
+    { name: 'walton', price: 12000, camera: 10, storage: 64 },
+    { name: 'oppo', price: 15000, camera: 10, storage: 64 },
+    { name: 'lava', price: 8000, camera: 10, storage: 64 },
+    { name: 'shawmi', price: 22000, camera: 10, storage: 64 },
+    { name: 'tecno', price: 7000, camera: 10, storage: 64 },
+    { name: 'infinix', price: 11000, camera: 10, storage: 64 },
+
+];
+let cheapest = phones[0];
+for (const phone of phones) {
+    //compare price only
+    if (phone.price < cheapest.price) {
+        cheapest = phone;
+    }
+}
+console.log(cheapest);
+
+//>>>>>>>>>>>>>>>>=====-------22-9 Traveling in a Jungle and counting wild animals------=====<<<<<<<<<<<<<<<<<<<<<<
