@@ -462,4 +462,119 @@ for (const phone of phones) {
 }
 console.log(cheapest);
 
-//>>>>>>>>>>>>>>>>=====-------22-9 Traveling in a Jungle and counting wild animals------=====<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+//>>>>>>>>>>>>>>>>=====-------------------------------------------------------=====<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
+// ১. [ ফাংশন নেম দিতে হবে anaToVori ]: একটা ফাংশন এ প্যারামিটার হিসেবে নিবে আনা (ana)।
+//  তারপর সেটাকে ভরি তে কনভার্ট করে কত মান হয় সেই সংখ্যা রিটার্ন করবে। শুধু সংখ্যাটা রিটার্ন করবে। 
+//ANS==>>:
+function anaToVori(ana) {
+    if (typeof ana != 'number') {
+        return 'please enter number'
+    }
+    var vori = ana / 16;
+    return vori;
+}
+
+console.log(anaToVori(100));
+
+
+// ২. [ ফাংশন নেম দিতে হবে pandaCost]: তিনটা প্যারামিটার লাগবে। ভিডিও ভালো করে দেখবে। 
+// ১ টি সিঙ্গারা এর দাম – ৭ টাকা
+// ১ টি সমুচা এর দাম – ১০ টাকা 
+// ১ টি জিলাপি এর দাম – ১৫ টাকা 
+// এখন সে যদি বিভিন্ন সংখ্যার সিঙ্গারা, সমুচা, আর জিলাপি এর অর্ডার দেয় তাহলে টোটাল কত টাকা খরচ হবে হলো সেই সংখ্যা রিটার্ন করতে হবে। 
+// ANS ==>> :
+function pandaCost(singaraQuantity, somusaQuantity, jilapiQuantity) {
+    if (typeof singaraQuantity != 'number') {
+        return 'please enter posative number'
+    }
+    else if (typeof somusaQuantity != 'number') {
+        return 'please enter posative number'
+    }
+    else if (typeof jilapiQuantity != 'number') {
+        return 'please enter posative number'
+    }
+    var singaraPrice = 7;
+    var singaraTotalTk = singaraPrice * singaraQuantity;
+    var somusaPrice = 10;
+    var somusaTotalTk = somusaPrice * somusaQuantity;
+    var jilapiPrice = 15;
+    var jilapiTotalTk = jilapiPrice * jilapiQuantity;
+    var totalCost = singaraTotalTk + somusaTotalTk + jilapiTotalTk;
+    return totalCost;
+}
+var singaraQuantity = 10;
+var somusaQuantity = 8;
+var jilapiQuantity = 7;
+console.log(pandaCost(singaraQuantity, somusaQuantity, jilapiQuantity));
+
+
+
+// ৩. [ ফাংশন নেম দিতে হবে picnicBudget]: প্যারামিটার হিসাবে নিবে কয়জন পিকিনিক এ যাবে সেই সংখ্যা। 
+// যদি ১০০ বা তার কম যায় তাহলে প্রত্যেক এর জন্য খরচ হবে ৫০০০ টাকা করে। যদি ১০০ এর বেশি কিন্তু ২০০ 
+// এর কম বা সমান যায় তাহলে প্রথম ১০০ জন এর প্রতি জন এর জন্য ৫০০০ টাকা করে দিতে হবে। আর ১০০ 
+// এর বেশি (অর্থাৎ ১০১ নম্বর থেকে) যতজন আছে তাদের প্রত্যেক ওই জন্য ৪০০০ টাকা করে দিতে হবে।আর যদি 
+// ২০০ এর বেশি যায় তাহলে প্রথম ১০০ জন এর প্রতি জন এর জন্য ৫০০০ টাকা করে দিতে হবে। আর ১০০ এর 
+// বেশি যতজন আছে তাদের প্রত্যেকের জন্য ৪০০০ টাকা করে দিতে হবে। এর ২০০ এর বেশি (অর্থাৎ ২০১ নম্বর থেকে) 
+// যতজন আছে তাদের প্রত্যেক এর জন্য ৩০০০ টাকা করে দিতে হবে। এখন আমি একটা প্যারামিটার দিবো। সেটা যেকোন 
+// সংখ্যা হতে পারে। সেই সংখ্যা অনুসারে তুমি ফাংশন থেকে রিটার্ন দিবে কতটাকা পিকনিক এর বাজেট হতে হবে। ইনপুট 
+// প্যারামিটার সংখ্যাটা ১০০ এর কম হতে পারে। ১০০ থেকে ২০০ এর মধ্যে হতে পারে। আবার ২০০ এর বেশিও হতে পারে। 
+// তাই সব কেইস ভালো করে টেস্ট করে নিবে। 
+//ANS:==>>
+function picnicBudget(person) {
+    const CostFor1To100Person = 5000;
+    const CostFor101To200Person = 4000;
+    const CostFor201ToEndPerson = 3000;
+    if (typeof person != 'number') {
+        return 'please enter posative number'
+    }
+    else if (person <= 100) {
+        const count = person * CostFor1To100Person;
+        return count;
+
+    }
+    else if (person <= 200) {
+        const fee01To100 = 100 * CostFor1To100Person;
+        const countingPerson = person - 100;
+        const fee101To200 = countingPerson * CostFor101To200Person;
+        const totalFee = fee01To100 + fee101To200;
+        return totalFee;
+    }
+    else if (person > 200) {
+        const fee01To100 = 100 * CostFor1To100Person;
+        const fee101To200 = 100 * CostFor101To200Person;
+        const countingPerson = person - 200;
+        const fee201ToEnd = countingPerson * CostFor201ToEndPerson;
+        const totalFee = fee01To100 + fee101To200 + fee201ToEnd;
+        return totalFee;
+    }
+}
+const people = picnicBudget(300);
+console.log(people);
+
+
+// কিছু নামের মধ্যে প্রথম বেজোড় সংখ্যা ওয়ালা নামটা খুঁজে বের করতে হবে ||||এমনভাবে কোড করতে হবে যাতে 
+// অনেকগুলো নাম এর মধ্যে প্রথম বিজোড় অক্ষর ওয়ালা নাম খুঁজে বের করতে পারে (saiful => ৬  টা  অক্ষর )
+//ANS:
+function oddFriend(name) {
+    let friend = "";
+    for (let i = 0; i < name.length; i++) {
+        const element = name[i];
+        if (element.length % 2 != 0) {
+            friend = element;
+            break;
+        }
+    }
+    return friend;
+}
+const name = ['Saiful', 'islam', 'abib', 'hasan'];
+const oldest = oddFriend(name);
+console.log(oldest);
+
